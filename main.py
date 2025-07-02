@@ -1,35 +1,34 @@
+import cmd
 import tkinter as tk
 from tkinter import ttk, messagebox
 import subprocess
+import json
 import re
 
 PREFIXO = "EDBO_"
 
 def listar_servicos():
     try:
-        palavras = ['extradigital', 'backup', 'online']
         cmd = [
             "powershell",
             "-Command",
-            "Get-WmiObject -Class Win32_Service | Select-Object Name,DisplayName | ConvertTo-Json"
+            "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; Get-WmiObject -Class Win32_Service | Select-Object Name,DisplayName | ConvertTo-Json"
         ]
-        result = subprocess.run(cmd, capture_output=True, text=True)
+        result = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
         if result.returncode != 0 or not result.stdout:
             raise Exception(result.stderr if result.stderr else "Sem saída do PowerShell")
-        import json
         servicos_json = json.loads(result.stdout)
         if isinstance(servicos_json, dict):
             servicos_json = [servicos_json]
+        # Lista: DisplayName (Name)
         servicos = []
         for svc in servicos_json:
             display = svc.get("DisplayName", "").strip()
             name = svc.get("Name", "").strip()
-            dados = f"{display} ({name})"
-            lower_display = display.lower()
-            lower_name = name.lower()
-            if any(p in lower_display or p in lower_name for p in palavras):
-                servicos.append(dados)
-        servicos.sort()
+            if display:  # ignora sem nome amigável
+                servicos.append(f"{display} ({name})")
+        # Ordena pela string exibida (DisplayName)
+        servicos.sort(key=lambda x: x.lower())
         return servicos
     except Exception as e:
         messagebox.showerror(
@@ -85,7 +84,7 @@ def remover_agendamentos(service_combo):
     erros = []
     for tarefa in [task_parar, task_iniciar, task_monitor]:
         comando = f'schtasks /delete /f /tn "{tarefa}"'
-        result = subprocess.run(comando, shell=True, capture_output=True, text=True)
+        result = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-16le", errors="replace")
         if result.returncode != 0 and "não existe" not in result.stdout.lower() and "does not exist" not in result.stdout.lower():
             erros.append(f"{tarefa}: {result.stdout or result.stderr}")
     if erros:
