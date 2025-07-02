@@ -34,3 +34,5 @@ No momento, a remoção é sempre para todos os agendamentos criados pelo app pa
 
 **- O app funciona em servidores Windows?**  
 Sim, foi projetado justamente para rodar em ambiente de servidor.
+
+EXE disponível para testes !!!
