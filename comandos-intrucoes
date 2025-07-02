@@ -1,0 +1,2 @@
+gerar exe:
+pyinstaller --onefile --noconsole --uac-admin main.py
