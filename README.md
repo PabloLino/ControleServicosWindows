@@ -5,7 +5,7 @@
 Este projeto é um aplicativo simples e direto para Windows que permite agendar automaticamente a parada e o início de serviços específicos** do Windows, ideal para serviços de backup corporativo ou rotinas que não devem rodar em horário comercial.
 - Desenvolvido em Python (Tkinter, padrão do Windows)
 - Não requer instalação de dependências além do Python padrão (ou pode ser empacotado como executável)
-- Permite selecionar serviços que contenham "extradigital", "backup" ou "online" no nome (Mas pode ser definido como se encaixa melhor na situação, ou retirar esses parâmetros para listar todos serviços do seu pc)
+- Permite selecionar serviços para gerenciar seu horário de funcionamento no pc.
 - Cria, remove e monitora agendamentos no Agendador de Tarefas do Windows
 
 ## Funcionalidades
@@ -23,15 +23,12 @@ Todos os agendamentos criados recebem um prefixo para facilitar a identificaçã
 
 ## Uso
 1. Abra o aplicativo como Administrador.
-2. Selecione o serviço desejado (a lista mostra apenas os serviços relacionados a backup, extradiital e online) (pode ser alterado no fonte os parâmetros).
+2. Selecione o serviço desejado.
 3. Defina o intervalo de horas em que o serviço deve ficar inativo.
 4. Clique em Agendar Serviço.
 5. Para remover os agendamentos criados, selecione o serviço e clique em Remover Todos Agendamentos.
 
 ## Questões apontadas
-**- Por que não aparecem todos os serviços do Windows?**  
-O filtro foi definido para facilitar uso em ambientes de backup e evitar erros na escolha.
-
 **- Posso alterar o intervalo ou remover apenas um agendamento?**  
 No momento, a remoção é sempre para todos os agendamentos criados pelo app para o serviço selecionado.
 
