@@ -2,9 +2,8 @@
 ![image](https://github.com/user-attachments/assets/694fe94d-3ea4-4df4-b0a7-5022afe359be)
 
 ## Descrição
-Este projeto é um aplicativo simples e direto para Windows que permite agendar automaticamente a parada e o início de serviços específicos** do Windows, ideal para serviços de backup corporativo ou rotinas que não devem rodar em horário comercial.
+Este projeto é um aplicativo simples e direto para Windows que permite agendar automaticamente a parada e o início de serviços específicos do Windows, ideal para serviços de backup corporativo ou rotinas que não devem rodar em horário comercial.
 - Desenvolvido em Python (Tkinter, padrão do Windows)
-- Não requer instalação de dependências além do Python padrão (ou pode ser empacotado como executável)
 - Permite selecionar serviços para gerenciar seu horário de funcionamento no pc.
 - Cria, remove e monitora agendamentos no Agendador de Tarefas do Windows
 
@@ -35,4 +34,4 @@ No momento, a remoção é sempre para todos os agendamentos criados pelo app pa
 **- O app funciona em servidores Windows?**  
 Sim, foi projetado justamente para rodar em ambiente de servidor.
 
-EXE disponível para testes !!!
+Atualizado para não interferir nos serviços no final de semana.
