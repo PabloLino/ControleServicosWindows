@@ -1,5 +1,5 @@
 # Agendamento Automático de Serviço Windows
-![image](https://github.com/user-attachments/assets/bf0c8f6f-75af-4f5f-96ec-1c3bd7c4d69b)
+![image](https://github.com/user-attachments/assets/694fe94d-3ea4-4df4-b0a7-5022afe359be)
 
 ## Descrição
 Este projeto é um aplicativo simples e direto para Windows que permite agendar automaticamente a parada e o início de serviços específicos** do Windows, ideal para serviços de backup corporativo ou rotinas que não devem rodar em horário comercial.
