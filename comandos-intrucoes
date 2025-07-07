@@ -1,2 +1,4 @@
 gerar exe:
 pyinstaller --onefile --noconsole --uac-admin main.py
+pyinstaller --onefile --noconsole --uac-admin --icon=rclone-05.ico --add-data "rclone-05.ico;." --name=ControladorRclone main.py
+

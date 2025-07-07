@@ -1,0 +1,15 @@
+# Compilados Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Pastas de build do PyInstaller
+build/
+dist/
+*.spec
+
+# Arquivos temporários
+*.log
+*.tmp
+
+.vscode/

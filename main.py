@@ -1,4 +1,5 @@
-from interface import iniciar_interface
+from interface import App
 
 if __name__ == "__main__":
-    iniciar_interface()
+    app = App()
+    app.mainloop()
